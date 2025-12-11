@@ -6,7 +6,7 @@
         limit: 30
   rules:
     - name: My range rule
-      condition: event.i == 1
+      condition: event.i == 27
       action:
         debug:
           msg: "I am learning to write a rulebook as a part of training, event.i = {{ event.i }}"
