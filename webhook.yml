@@ -1,0 +1,12 @@
+---
+- name: Webhook rulebook example
+  hosts: all 
+  gather_facts: false
+  sources:
+    - ansible.eda.webhook:
+      port: 5000
+  rules:
+    - name:
+      condition: event.i == 2
+      action:
+        debug:
