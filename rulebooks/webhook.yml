@@ -10,4 +10,8 @@
     - name: Say Howdy
       condition: event.payload.message == "Howdy! Ansible EDA"
       action:
-        debug:
+        run_job_template:
+          name: print_job_template
+          organization: default
+          job_args:
+            eda_message: "{{ event.payload.message }}"
