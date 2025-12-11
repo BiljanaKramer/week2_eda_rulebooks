@@ -16,3 +16,7 @@
           job_args:
             extra_vars:
               eda_message: "{{ event.payload.message }}"
+      condition: event.payload.message <> "Howdy! Ansible EDA"
+      action:
+        debug:
+          msg: "{{ event.payload.message }}"
