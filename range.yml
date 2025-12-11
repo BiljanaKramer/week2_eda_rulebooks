@@ -1,0 +1,12 @@
+---
+- name: Running ansible.eda.range as a source
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 30
+  rules:
+    - name: My range rule
+      condition: event.i == 1
+      action:
+        debug:
+          msg: "I am learning to write a rulebook as a part of training, event.i = {{ event.i }}"
